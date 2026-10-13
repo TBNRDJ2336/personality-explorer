@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personality Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="star-field" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Personality Explorer home">
+      <span class="brand-mark">✦</span><span>Personality <b>Explorer</b></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a class="active" href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#test">Take Test</a>
+      <a href="#results">Results</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">DISCOVER <span>•</span> UNDERSTAND <span>•</span> GROW</p>
+        <h1>Discover Your<br><em>True Self.</em></h1>
+        <p class="hero-description">A little curiosity can reveal a lot about you. Explore your personality, understand your strengths, and discover what makes you uniquely you.</p>
+        <a class="button button-primary" href="#test">Take the test <span>↗</span></a>
+        <div class="trust-note"><span class="tiny-stars">✦ ✧ ✦</span> A fun guide to self-discovery</div>
+      </div>
+      <div class="hero-art" aria-label="Abstract glowing profile illustration">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="glow glow-a"></div><div class="glow glow-b"></div>
+        <div class="profile-art">
+          <svg viewBox="0 0 340 360" role="img" aria-label="Stylized profile outline with a star">
+            <defs>
+              <linearGradient id="lineGlow" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#9bdcff"/><stop offset="55%" stop-color="#a98bff"/><stop offset="100%" stop-color="#e8b7ff"/>
+              </linearGradient>
+              <linearGradient id="faceFill" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#5c77d9" stop-opacity=".55"/><stop offset="100%" stop-color="#9b67ef" stop-opacity=".05"/>
+              </linearGradient>
+            </defs>
+            <path d="M211 48 C168 30 112 50 101 96 C95 120 102 141 88 159 L70 181 L95 192 C91 220 105 238 128 242 L129 276 C129 296 153 311 180 306 L215 296 C236 290 247 268 244 246 L239 211 C259 191 267 167 263 137 C259 91 244 62 211 48Z" fill="url(#faceFill)" stroke="url(#lineGlow)" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M130 181 Q148 171 163 181 M133 203 Q151 216 168 203 M202 124 Q220 138 221 158" fill="none" stroke="#c9c5ff" stroke-width="3" stroke-linecap="round"/>
+            <path d="M177 43 C199 28 230 33 248 51" fill="none" stroke="#9bdcff" stroke-width="2" stroke-linecap="round"/>
+            <path d="M182 74 L193 100 L220 103 L200 121 L205 148 L182 134 L159 148 L164 121 L144 103 L171 100Z" fill="#8edcff" opacity=".95"/>
+            <path d="M182 83 L190 104 L211 106 L195 120 L199 140 L182 130 L165 140 L169 120 L153 106 L174 104Z" fill="#d8f4ff"/>
+          </svg>
+        </div>
+        <span class="spark spark-one">✦</span><span class="spark spark-two">✧</span><span class="spark spark-three">✦</span>
+        <div class="floating-tag"><span class="tag-dot"></span> Your journey, your way</div>
+      </div>
+    </section>
+
+    <section class="about-section section-wrap" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">A MOMENT FOR YOU</p>
+        <h2>Get to know <em>yourself.</em></h2>
+        <p>Personality is more than a label. It is a starting point for understanding how you think, feel, connect, and grow.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="feature-icon">✿</span><h3>Discover traits</h3>
+          <p>Explore the qualities and habits that make you, you.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-icon">✧</span><h3>Find your style</h3>
+          <p>Learn about your preferences and how you approach the world.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-icon">♧</span><h3>Grow with insight</h3>
+          <p>Use your results as a gentle prompt for self-reflection.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="quiz-section section-wrap" id="test">
+      <div class="quiz-heading">
+        <p class="eyebrow">YOUR SELF-DISCOVERY JOURNEY</p>
+        <h2>A few questions, <em>a little clarity.</em></h2>
+        <p>Choose the answer that feels most like you. There are no right or wrong answers.</p>
+      </div>
+      <div class="quiz-card" id="quizCard">
+        <div class="quiz-topline"><span id="questionCount">QUESTION 1 OF 6</span><span id="progressText">17%</span></div>
+        <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+        <div id="questionArea">
+          <h3 id="questionText">After a busy week, what helps you recharge?</h3>
+          <div class="answers" id="answers"></div>
+        </div>
+        <div class="quiz-controls"><button class="text-button" id="backButton" disabled>← Back</button><span class="small-note">Go with your first instinct ✦</span></div>
+      </div>
+    </section>
+
+    <section class="results-section section-wrap" id="results">
+      <div class="results-card" id="resultsCard">
+        <div class="results-star">✦</div>
+        <p class="eyebrow">YOUR PERSONALITY SNAPSHOT</p>
+        <h2 id="resultTitle">Your results are waiting.</h2>
+        <p id="resultDescription">Complete the short quiz above to see a friendly snapshot based on your answers.</p>
+        <div class="result-traits" id="resultTraits">
+          <span>Self-awareness</span><span>Curiosity</span><span>Growth</span>
+        </div>
+        <p class="disclaimer">This is a lighthearted reflection tool, not a clinical or scientifically validated personality assessment. You are more than a quiz result.</p>
+        <button class="button button-secondary" id="retakeButton">Retake the test ↻</button>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#home"><span class="brand-mark">✦</span><span>Personality <b>Explorer</b></span></a><p>Made for curious minds. Keep discovering.</p><a href="#home" class="back-top">Back to top ↑</a></footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
